@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Professional Portfolio</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+  <style>
+    :root {
+      --green: #4caf50;
+      --dark-bg: #121212;
+      --light-bg: #f4f4f4;
+      --dark-text: #fff;
+      --light-text: #111;
+    }
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      background: var(--dark-bg);
+      color: var(--dark-text);
+      scroll-behavior: smooth;
+      transition: background 0.4s, color 0.4s;
+    }
+    .light-mode {
+      background: var(--light-bg);
+      color: var(--light-text);
+    }
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px;
+      background: #1e1e1e;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+    nav a {
+      margin: 0 10px;
+      color: #fff;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    .toggle-mode {
+      cursor: pointer;
+      background: none;
+      border: 2px solid var(--green);
+      color: var(--green);
+      padding: 5px 10px;
+      border-radius: 5px;
+    }
+    .hero {
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      background: linear-gradient(to right, #0f2027, #2c7744);
+    }
+    .hero h1 span {
+      border-right: 2px solid;
+      animation: typing 3s steps(20) infinite, blink 0.75s step-end infinite;
+      white-space: nowrap;
+      overflow: hidden;
+      display: inline-block;
+    }
+    @keyframes typing {
+      from { width: 0; }
+      to { width: 100%; }
+    }
+    @keyframes blink {
+      50% { border-color: transparent; }
+    }
+    .hero p {
+      font-size: 1.2rem;
+      color: #ccc;
+      max-width: 600px;
+    }
+    .btn {
+      margin-top: 20px;
+      padding: 10px 20px;
+      background: var(--green);
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+    .section {
+      padding: 60px 20px;
+    }
+    .filters {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    .filters button {
+      background: none;
+      border: 2px solid var(--green);
+      color: var(--green);
+      padding: 5px 15px;
+      margin: 5px;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+    .skills, .projects {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+    .card {
+      background: #1e1e1e;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+      transition: transform 0.3s;
+    }
+    .card:hover {
+      transform: translateY(-5px);
+    }
+    .progress {
+      background: #333;
+      border-radius: 20px;
+      overflow: hidden;
+      margin-top: 10px;
+    }
+    .progress-bar {
+      height: 10px;
+      background: var(--green);
+    }
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: #1e1e1e;
+      color: #aaa;
+    }
+    .profile-pic {
+      border-radius: 50%;
+      width: 150px;
+      height: 150px;
+      object-fit: cover;
+      margin-bottom: 20px;
+      border: 4px solid var(--green);
+      transition: transform 0.5s ease-in-out;
+    }
+    .profile-pic:hover {
+      transform: scale(1.1) rotate(2deg);
+    }
+    .resume {
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">SK AKIB</div>
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <button class="toggle-mode" onclick="toggleTheme()">Toggle Theme</button>
+  </header>
+
+  <section class="hero" id="home" data-aos="fade-in">
+    <img src="profile pic.jpg" alt="Profile Picture" class="profile-pic" />
+    <h1>Hello, I'm <span>Akib</span></h1>
+    <p>A passionate developer focused on building interactive, accessible, and performance-oriented websites and applications. I bring ideas to life in the browser with clean, efficient code.</p>
+    <a href="#contact"><button class="btn">Contact Me</button></a>
+    <a href="resume.pdf" download class="btn resume">Download Resume</a>
+  </section>
+
+  <section class="section" id="skills">
+    <h2 data-aos="fade-up">Skills</h2>
+    <div class="skills">
+      <div class="card" data-aos="fade-up" data-aos-delay="100">
+        <h3>HTML</h3>
+        <p>Semantic markup, accessibility, SEO-friendly structures.</p>
+        <div class="progress"><div class="progress-bar" style="width: 90%"></div></div>
+      </div>
+      <div class="card" data-aos="fade-up" data-aos-delay="200">
+        <h3>CSS</h3>
+        <p>Responsive design, Flexbox, Grid, animations and transitions.</p>
+        <div class="progress"><div class="progress-bar" style="width: 85%"></div></div>
+      </div>
+      <div class="card" data-aos="fade-up" data-aos-delay="300">
+        <h3>JavaScript</h3>
+        <p>DOM manipulation, ES6+, asynchronous programming, APIs.</p>
+        <div class="progress"><div class="progress-bar" style="width: 80%"></div></div>
+      </div>
+      <div class="card" data-aos="fade-up" data-aos-delay="400">
+        <h3>C</h3>
+        <p>Strong grasp of procedural programming, file handling, and data structures.</p>
+        <div class="progress"><div class="progress-bar" style="width: 75%"></div></div>
+      </div>
+      <div class="card" data-aos="fade-up" data-aos-delay="500">
+        <h3>C++</h3>
+        <p>Object-oriented design, STL, memory management and algorithms.</p>
+        <div class="progress"><div class="progress-bar" style="width: 70%"></div></div>
+      </div>
+      <div class="card" data-aos="fade-up" data-aos-delay="600">
+        <h3>C#</h3>
+        <p>Basic application development and event-driven programming concepts.</p>
+        <div class="progress"><div class="progress-bar" style="width: 60%"></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="projects">
+    <h2 data-aos="fade-up">Projects</h2>
+    <div class="filters">
+      <button onclick="filterProjects('all')">All</button>
+      <button onclick="filterProjects('web')">Web</button>
+      <button onclick="filterProjects('c')">C Language</button>
+    </div>
+    <div class="projects">
+      <div class="card" data-aos="flip-left" data-category="web">
+        <h3>Portfolio Website</h3>
+        <p>Modern portfolio with animations, responsive layout, and downloadable resume feature.</p>
+        <a href="index1.html" class="btn">Live Demo</a>
+      </div>
+      <div class="card" data-aos="flip-left" data-aos-delay="100" data-category="c">
+        <h3>Bank Management System</h3>
+        <p>Terminal-based C application with file handling for deposits, withdrawals, and balance check.</p>
+        <a href="#" class="btn">Source Code</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="contact">
+    <h2 data-aos="fade-up">Contact Me</h2>
+    <form data-aos="zoom-in">
+      <input type="text" placeholder="Your Name" required /><br /><br />
+      <input type="email" placeholder="Your Email" required /><br /><br />
+      <textarea rows="4" placeholder="Your Message"></textarea><br /><br />
+      <button class="btn" type="submit">Send Message</button>
+    </form>
+  </section>
+
+  <footer>
+    <p>© 2025 Akib. All rights reserved.</p>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    AOS.init();
+
+    function toggleTheme() {
+      document.body.classList.toggle('light-mode');
+    }
+
+    function filterProjects(category) {
+      const cards = document.querySelectorAll('.projects .card');
+      cards.forEach(card => {
+        card.style.display = category === 'all' || card.dataset.category === category ? 'block' : 'none';
+      });
+    }
+  </script>
+</body>
+</html>

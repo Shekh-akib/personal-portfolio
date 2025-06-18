@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Professional Portfolio</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <style>
+    /* Basic reset */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Segoe UI', sans-serif; background-color: #111; color: #fff; }
+    a { text-decoration: none; color: inherit; }
+
+    /* Navbar */
+    nav { position: fixed; top: 0; left: 0; width: 100%; background: #222; display: flex; justify-content: space-between; align-items: center; padding: 1rem 2rem; z-index: 1000; }
+    nav .logo { font-size: 1.5rem; font-weight: bold; color: #00f7ff; }
+    nav ul { list-style: none; display: flex; gap: 2rem; }
+    nav ul li { transition: color 0.3s; }
+    nav ul li:hover { color: #00f7ff; }
+
+    /* Hero Section */
+    .hero { height: 100vh; display: flex; align-items: center; justify-content: center; flex-direction: column; text-align: center; padding-top: 4rem; }
+    .hero img { width: 150px; height: 150px; border-radius: 50%; object-fit: cover; margin-bottom: 1rem; border: 3px solid #00f7ff; }
+    .hero h1 { font-size: 3rem; margin-bottom: 1rem; }
+    .hero p { font-size: 1.2rem; color: #ccc; max-width: 600px; }
+
+    /* Skills */
+    .skills { padding: 4rem 2rem; text-align: center; background: #1c1c1c; }
+    .skills h2 { font-size: 2.5rem; margin-bottom: 2rem; }
+    .skill-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2rem; }
+    .skill-card { background: #2a2a2a; padding: 2rem; border-radius: 10px; transition: transform 0.3s; }
+    .skill-card:hover { transform: translateY(-10px); }
+    .skill-card i { font-size: 2rem; color: #00f7ff; margin-bottom: 1rem; }
+    .skill-card p { color: #ccc; font-size: 0.95rem; }
+
+    /* Projects */
+    .projects { padding: 4rem 2rem; text-align: center; background: #1e1e1e; }
+    .projects h2 { font-size: 2.5rem; margin-bottom: 2rem; }
+    .project-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; }
+    .project-card { background: #2a2a2a; padding: 1.5rem; border-radius: 10px; transition: transform 0.3s; }
+    .project-card:hover { transform: scale(1.03); }
+    .project-card img { width: 100%; height: 150px; object-fit: cover; border-radius: 5px; margin-bottom: 1rem; }
+    .project-card h3 { color: #00f7ff; margin-bottom: 0.5rem; }
+    .project-card p { font-size: 0.95rem; color: #ccc; }
+
+    /* Contact Section */
+    .contact { padding: 4rem 2rem; text-align: center; background: #181818; }
+    .contact h2 { font-size: 2.5rem; margin-bottom: 2rem; }
+    .contact-form { max-width: 600px; margin: 0 auto; display: flex; flex-direction: column; gap: 1rem; }
+    .contact-form input, .contact-form textarea { padding: 1rem; border: none; border-radius: 5px; background: #2a2a2a; color: #fff; font-size: 1rem; }
+    .contact-form textarea { resize: vertical; height: 150px; }
+    .contact-form button { padding: 1rem; background: #00f7ff; border: none; color: #111; font-weight: bold; border-radius: 5px; cursor: pointer; transition: background 0.3s; }
+    .contact-form button:hover { background: #00d2cc; }
+
+    /* Footer */
+    footer { background: #111; padding: 2rem; text-align: center; color: #777; }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav>
+    <div class="logo">Akib's Portfolio</div>
+    <ul>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero" id="home" data-aos="fade-up">
+    <img src="profile pic.jpg" alt="Profile Picture">
+    <h1>Hello, I'm <span style="color:#00f7ff;">Akib</span></h1>
+    <p>A passionate developer skilled in creating dynamic web and software experiences.</p>
+  </section>
+
+  <!-- Skills Section -->
+  <section class="skills" id="skills" data-aos="fade-right">
+    <h2>My Skills</h2>
+    <div class="skill-cards">
+      <div class="skill-card">
+        <i class="fab fa-html5"></i>
+        <h3>HTML</h3>
+        <p>Structure the web with semantic, accessible HTML5 elements.</p>
+      </div>
+      <div class="skill-card">
+        <i class="fab fa-css3-alt"></i>
+        <h3>CSS</h3>
+        <p>Create beautiful responsive designs with Flexbox, Grid, and animations.</p>
+      </div>
+      <div class="skill-card">
+        <i class="fab fa-js"></i>
+        <h3>JavaScript</h3>
+        <p>Build interactive features and single-page applications.</p>
+      </div>
+      <div class="skill-card">
+        <i class="fas fa-code"></i>
+        <h3>C / C++</h3>
+        <p>Solid foundation in structured and object-oriented programming.</p>
+      </div>
+      <div class="skill-card">
+        <i class="fas fa-laptop-code"></i>
+        <h3>C#</h3>
+        <p>Experience in building Windows apps and Unity games.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects Section -->
+  <section class="projects" id="projects" data-aos="fade-left">
+    <h2>My Projects</h2>
+    <div class="project-cards">
+      <div class="project-card">
+        <img src="https://via.placeholder.com/300x150" alt="Project 1">
+        <h3>Portfolio Website</h3>
+        <p>A personal website to showcase skills, projects, and contact info.</p>
+      </div>
+      <div class="project-card">
+        <img src="https://via.placeholder.com/300x150" alt="Project 2">
+        <h3>Bank Management System</h3>
+        <p>A simple C program to handle account creation, deposit, withdrawal, and balance inquiry.</p>
+      </div>
+      <div class="project-card">
+        <img src="https://via.placeholder.com/300x150" alt="Project 3">
+        <h3>Event Planner App</h3>
+        <p>Mobile app built using Android Studio to plan and share events with friends.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section class="contact" id="contact" data-aos="fade-up">
+    <h2>Contact Me</h2>
+    <form class="contact-form">
+      <input type="text" name="name" placeholder="Your Name" required>
+      <input type="email" name="email" placeholder="Your Email" required>
+      <textarea name="message" placeholder="Your Message" required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>Made with ❤️ by Akib | © 2025</p>
+  </footer>
+
+  <script>
+    AOS.init({
+      duration: 1000,
+    });
+  </script>
+</body>
+</html>
